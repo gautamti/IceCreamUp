@@ -1,8 +1,9 @@
 package com.example.icecreamup.dto;
 
 import java.util.Date;
+import java.util.List;
 
-public class OrderHeaderDTO 
+public class OrderDTO 
 {
 	private int orderId;
 	private String orderedBy;
@@ -11,6 +12,7 @@ public class OrderHeaderDTO
 	private String email;
 	private Date timeStamp;
 	private String comments;
+	private List<OrderItemDTO> orderItems;
 	
 	public int getOrderId() 
 	{
@@ -81,5 +83,15 @@ public class OrderHeaderDTO
 	public void setComments(String comments) 
 	{
 		this.comments = comments;
+	}
+
+	public List<OrderItemDTO> getOrderItems()
+	{
+		return orderItems;
+	}
+
+	public void setOrderItems(List<OrderItemDTO> orderItems)
+	{
+		this.orderItems = orderItems;
 	}
 }
