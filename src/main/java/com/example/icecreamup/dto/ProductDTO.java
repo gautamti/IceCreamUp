@@ -70,4 +70,8 @@ public class ProductDTO
 	{
 		this.productName = productName;
 	}
+	@Override
+	public String toString() {
+		return productId + " " + orderCount + " " + productName;
+	}
 }
