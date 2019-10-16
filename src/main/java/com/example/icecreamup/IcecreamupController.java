@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @return
  */
 
-
 @Controller
 public class IcecreamupController {
 	
