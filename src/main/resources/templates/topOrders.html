@@ -5,22 +5,36 @@
 <title>Ice Cream Up!</title>
 <style>
 html{
-	background-color: #fefefe;
-	color: orange;
+	background-color: #f77b0f;
+	color: #fefefe;
+	border: 5px;
+	border-style:solid;
+	border-color: white;
 }
 
 .nav{
-	overflow: hidden;
-	background-color: orange;
-	color: white;
-  text-align: center;
+
+  overflow: hidden;
+  background-color: #ff7b00;
+  color: white;
+  text-align: left;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  margin: 5px;
+  margin: 10px;
+  style:block;
 }
 h2{
 	text-align:center;
+}
+a:visited{
+	color: white;
+}
+a:hover{
+	color: black;
+}
+footer{
+	font-style: italic;
 }
 </style>
 
@@ -35,4 +49,5 @@ h2{
 <h2>Top Ice Cream Flavors</h2>
 <p th:text="${productDTO}"/>
 </body>
+<footer> IceCream Up, Inc.</footer>
 </html>  
