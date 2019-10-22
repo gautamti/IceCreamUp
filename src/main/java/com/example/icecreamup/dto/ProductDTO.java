@@ -1,7 +1,13 @@
 package com.example.icecreamup.dto;
 
 import java.util.Date;
+import java.util.List;
 
+/**
+ * Class for Products.
+ * Contains information about the product and a list of the ingredients (ProductItem)
+ * @author chaklahk
+ */
 public class ProductDTO 
 {
 	private int productId;
@@ -10,6 +16,7 @@ public class ProductDTO
 	private Date creationDate;
 	private String createdBy;
 	private String productName;
+	private List<ProductItemDTO> productItems;
 	
 	public int getProductId()
 	{
@@ -74,6 +81,16 @@ public class ProductDTO
 	@Override
 	public String toString() {
 		return productId + " " + orderCount + " " + productName;
+	}
+
+	public List<ProductItemDTO> getProductItems()
+	{
+		return productItems;
+	}
+
+	public void setProductItems(List<ProductItemDTO> productItems)
+	{
+		this.productItems = productItems;
 	}
 	
 }

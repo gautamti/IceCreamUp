@@ -3,6 +3,11 @@ package com.example.icecreamup.dto;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Class for Orders.
+ * Contains order information and a list of all products in the order.
+ * @author chaklahk
+ */
 public class OrderDTO 
 {
 	private int orderId;

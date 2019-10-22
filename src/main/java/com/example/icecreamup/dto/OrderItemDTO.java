@@ -1,5 +1,10 @@
 package com.example.icecreamup.dto;
 
+/**
+ * Class for Order Items.
+ * Used for linking an order to a product and providing a quantity.
+ * @author chaklahk
+ */
 public class OrderItemDTO
 {
 	private int orderId;
