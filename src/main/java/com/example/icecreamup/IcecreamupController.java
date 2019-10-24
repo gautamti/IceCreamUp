@@ -29,11 +29,6 @@ public class IcecreamupController {
 	public String read() {
 		return "start";
 	}
-	
-	@PostMapping("/start")
-	public String create() {
-		return "start";
-	}
 
 	@RequestMapping(value="/topOrders", method=RequestMethod.GET)
 	public String topOrder(Model model) {
