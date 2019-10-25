@@ -11,7 +11,7 @@ import java.util.List;
 public class OrderDTO 
 {
 	private int orderId;
-	private String orderedBy;
+	private String companyOrderedBy;
 	private String address;
 	private String phoneNumber;
 	private String email;
@@ -26,7 +26,7 @@ public class OrderDTO
 	
 	public String getOrderedBy() 
 	{
-		return orderedBy;
+		return companyOrderedBy;
 	}
 	
 	public String getAddress() 
@@ -62,7 +62,7 @@ public class OrderDTO
 	
 	public void setOrderedBy(String orderedBy) 
 	{
-		this.orderedBy = orderedBy;
+		this.companyOrderedBy = orderedBy;
 	}
 	
 	public void setAddress(String address) 
