@@ -42,12 +42,12 @@ public class IngredientDTO
 		this.isAvailable = isAvailable;
 	}
 	
-	public double getPrice()
+	public double getIngredientPrice()
 	{
 		return price;
 	}
 	
-	public void setPrice(double price)
+	public void setIngredientPrice(double price)
 	{
 		this.price = price;
 	}

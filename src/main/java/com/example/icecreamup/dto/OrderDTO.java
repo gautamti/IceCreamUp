@@ -17,7 +17,7 @@ public class OrderDTO
 	private String email;
 	private Date timeStamp;
 	private String comments;
-	private List<OrderItemDTO> orderItems;
+	private List<OrderProductsDTO> orderProducts;
 	
 	public int getOrderId() 
 	{
@@ -90,13 +90,13 @@ public class OrderDTO
 		this.comments = comments;
 	}
 
-	public List<OrderItemDTO> getOrderItems()
+	public List<OrderItemDTO> getOrderProducts()
 	{
-		return orderItems;
+		return orderProducts;
 	}
 
-	public void setOrderItems(List<OrderItemDTO> orderItems)
+	public void setOrderProducts(List<OrderItemDTO> orderProducts)
 	{
-		this.orderItems = orderItems;
+		this.orderProducts = orderProducts;
 	}
 }

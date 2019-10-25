@@ -5,7 +5,7 @@ package com.example.icecreamup.dto;
  * Used for linking an order to a product and providing a quantity.
  * @author chaklahk
  */
-public class OrderItemDTO
+public class OrderProductsDTO
 {
 	private int orderId;
 	private int productId;
