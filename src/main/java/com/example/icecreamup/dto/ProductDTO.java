@@ -16,7 +16,7 @@ public class ProductDTO
 	private Date creationDate;
 	private String createdBy;
 	private String productName;
-	private List<ProductItemDTO> productItems;
+	private List<ProductIngredientsDTO> productItems;
 	
 	public int getProductId()
 	{

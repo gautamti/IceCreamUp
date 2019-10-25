@@ -5,21 +5,10 @@ package com.example.icecreamup.dto;
  * Used for linking a product to ingredients and provides a quantity.
  * @author chaklahk
  */
-public class ProductItemDTO
+public class ProductIngredientsDTO
 {
-	private int productId;
 	private int ingredientId;
 	private int quantity;
-	
-	public int getProductId()
-	{
-		return productId;
-	}
-	
-	public void setProductId(int productId)
-	{
-		this.productId = productId;
-	}
 	
 	public int getIngredientId()
 	{
@@ -31,12 +20,12 @@ public class ProductItemDTO
 		this.ingredientId = ingredientId;
 	}
 	
-	public int getQuantity()
+	public int getIngredientQuantity()
 	{
 		return quantity;
 	}
 	
-	public void setQuantity(int quantity)
+	public void setIngredientQuantity(int quantity)
 	{
 		this.quantity = quantity;
 	}
