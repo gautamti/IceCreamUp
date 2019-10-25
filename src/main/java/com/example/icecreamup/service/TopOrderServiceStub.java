@@ -13,7 +13,7 @@ import com.example.icecreamup.dto.ProductDTO;
 public class TopOrderServiceStub implements ITopOrderService
 {
 	@Override
-	public ProductDTO fetchById(int id) {
+	public ProductDTO fetchByProductId(int id) {
 		ProductDTO productDTO = new ProductDTO();
 		productDTO.setProductId(50);
 		productDTO.setOrderCount(100);

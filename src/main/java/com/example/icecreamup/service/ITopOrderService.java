@@ -11,6 +11,6 @@ public interface ITopOrderService {
 	 * @param id an unique lookup
 	 * @return a flavor with a matching id.
 	 */
-	ProductDTO fetchById(int id);
+	ProductDTO fetchByProductId(int id); /** This makes it easier to identify what is being fetched */
 }
 
