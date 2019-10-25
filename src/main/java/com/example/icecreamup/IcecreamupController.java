@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.PostMapping;
  * handle the default
  * @return
  */
-
-
 @Controller
 public class IcecreamupController {
 	
@@ -40,6 +38,13 @@ public class IcecreamupController {
 		ProductDTO productDTO = topOrderService.fetchById(50);
 		model.addAttribute("productDTO", productDTO);
 		return "topOrders";
+	}
+	
+	@RequestMapping(value="/allItems", method=RequestMethod.GET)
+	public String allItems(Model model) {
+		ProductDTO productDTO = allItemService.fetchAllItems();
+		model.addAttribute("productDTO", productDTO);
+		return "allItems";
 	}
 	@RequestMapping("/")
 	public String index() {
