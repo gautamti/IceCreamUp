@@ -16,7 +16,8 @@ public class ProductDTO
 	private Date creationDate;
 	private String createdBy;
 	private String productName;
-	private List<ProductItemDTO> productItems;
+	private List<ProductItemDTO> ingredientList; /** Changed the name of ProductItem to IngredientList */
+	
 	
 	public int getProductId()
 	{
@@ -83,14 +84,14 @@ public class ProductDTO
 		return productId + " " + orderCount + " " + productName;
 	}
 
-	public List<ProductItemDTO> getProductItems()
+	public List<ProductItemDTO> getIngredientList()
 	{
 		return productItems;
 	}
 
-	public void setProductItems(List<ProductItemDTO> productItems)
+	public void setIngredientList(List<ProductItemDTO> ingredientList)
 	{
-		this.productItems = productItems;
+		this.ingredientList = ingredientList;
 	}
 	
 }

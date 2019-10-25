@@ -37,7 +37,7 @@ public class IcecreamupController {
 
 	@RequestMapping(value="/topOrders", method=RequestMethod.GET)
 	public String topOrder(Model model) {
-		ProductDTO productDTO = topOrderService.fetchById(50);
+		ProductDTO productDTO = topOrderService.fetchByProductId(50);
 		model.addAttribute("productDTO", productDTO);
 		return "topOrders";
 	}
