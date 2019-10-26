@@ -25,6 +25,10 @@ public class IcecreamupController {
 	@Autowired
 	private ITopOrderService topOrderService;
 	
+	/**
+	 * Maps GET requests to the site's homepage endpoint
+	 * @return
+	 */
 	@RequestMapping(value="/start", method=RequestMethod.GET)
 	public String read() {
 		return "start";
@@ -35,6 +39,11 @@ public class IcecreamupController {
 		return "start";
 	}
 
+	/**
+	 * Maps GET requests to the site's top orders endpoint
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="/topOrders", method=RequestMethod.GET)
 	public String topOrder(Model model) {
 		ProductDTO productDTO = topOrderService.fetchById(50);

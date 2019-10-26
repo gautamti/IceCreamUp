@@ -10,7 +10,7 @@ public class IngredientDTO
 	private int ingredientId;
 	private String ingredientName;
 	private boolean isAvailable;
-	private double price;
+	private double ingredientPrice;
 	
 	public int getIngredientId()
 	{
@@ -42,13 +42,13 @@ public class IngredientDTO
 		this.isAvailable = isAvailable;
 	}
 	
-	public double getPrice()
+	public double getIngredientPrice()
 	{
-		return price;
+		return ingredientPrice;
 	}
 	
-	public void setPrice(double price)
+	public void setIngredientPrice(double ingredientPrice)
 	{
-		this.price = price;
+		this.ingredientPrice = ingredientPrice;
 	}
 }

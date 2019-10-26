@@ -18,6 +18,10 @@ public class ProductDTO
 	private String productName;
 	private List<ProductItemDTO> productItems;
 	
+	/**
+	 * Getter methods to return product
+	 * and order attributes
+	 */
 	public int getProductId()
 	{
 		return productId;
@@ -48,6 +52,9 @@ public class ProductDTO
 		return productName;
 	}
 	
+	/**
+	 * Setter methods for product and order attributes
+	 */
 	public void setProductId(int productId)
 	{
 		this.productId = productId;
@@ -78,11 +85,19 @@ public class ProductDTO
 		this.productName = productName;
 	}
 	
+	/**
+	 * Displays the product, number of orders for the product,
+	 * and the product ID in a concatenated string
+	 */
 	@Override
 	public String toString() {
 		return productId + " " + orderCount + " " + productName;
 	}
 
+	/**
+	 * Returns all products defined in the
+	 * ProductItemDTO
+	 */
 	public List<ProductItemDTO> getProductItems()
 	{
 		return productItems;

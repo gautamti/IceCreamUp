@@ -10,6 +10,7 @@ public class OrderItemDTO
 	private int orderId;
 	private int productId;
 	private int quantity;
+	private double unitPrice;
 	
 	public int getOrderId()
 	{
@@ -39,5 +40,15 @@ public class OrderItemDTO
 	public void setQuantity(int quantity)
 	{
 		this.quantity = quantity;
+	}
+	
+	public double getUnitPrice()
+	{
+		return unitPrice;
+	}
+	
+	public void setUnitPrice(double unitPrice)
+	{
+		this.unitPrice = unitPrice;
 	}
 }
