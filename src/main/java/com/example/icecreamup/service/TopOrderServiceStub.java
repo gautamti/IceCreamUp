@@ -15,9 +15,13 @@ public class TopOrderServiceStub implements ITopOrderService
 	@Override
 	public ProductDTO fetchById(int id) {
 		ProductDTO productDTO = new ProductDTO();
-		productDTO.setProductId(50);
-		productDTO.setOrderCount(100);
-		productDTO.setProductName("Chocolate");
+		int testProductId = 50;
+		int testOrderCount = 100;
+		String testName = "Chocolate";
+
+		productDTO.setProductId(testProductId);
+		productDTO.setOrderCount(testOrderCount);
+		productDTO.setProductName(testName);
 		return productDTO;
 	}
 	
