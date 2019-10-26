@@ -17,6 +17,7 @@ public class OrderDTO
 	private String email;
 	private Date timeStamp;
 	private String comments;
+	private double totalPrice;
 	private List<OrderItemDTO> orderItems;
 	
 	public int getOrderId() 
@@ -55,6 +56,11 @@ public class OrderDTO
 		return comments;
 	}
 	
+	public double getTotalPrice()
+	{
+		return totalPrice;
+	}
+	
 	public void setOrderId(int orderId) 
 	{
 		this.orderId = orderId;
@@ -89,7 +95,15 @@ public class OrderDTO
 	{
 		this.comments = comments;
 	}
+	
+	public void setTotalPrice(double totalPrice)
+	{
+		this.totalPrice = totalPrice;
+	}
 
+	/**
+	 * Sets and returns all items in the order
+	 */
 	public List<OrderItemDTO> getOrderItems()
 	{
 		return orderItems;
