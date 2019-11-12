@@ -1,4 +1,4 @@
-package com.example.icecreamup.services;
+package com.example.icecreamup.service;
 
 import org.springframework.stereotype.Component;
 import com.example.icecreamup.dto.ProductDTO;
