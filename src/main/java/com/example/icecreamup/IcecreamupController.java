@@ -14,8 +14,6 @@ import com.example.icecreamup.service.ITopOrderService;
  * handle the default
  * @return
  */
-
-
 @Controller
 public class IcecreamupController {
 	
@@ -32,6 +30,13 @@ public class IcecreamupController {
 		ProductDTO productDTO = topOrderService.fetchByProductId(50);
 		model.addAttribute("productDTO", productDTO);
 		return "topOrders";
+	}
+	
+	@RequestMapping(value="/allItems", method=RequestMethod.GET)
+	public String allItems(Model model) {
+		ProductDTO productDTO = allItemService.fetchAllItems();
+		model.addAttribute("productDTO", productDTO);
+		return "allItems";
 	}
 	@RequestMapping("/")
 	public String index() {

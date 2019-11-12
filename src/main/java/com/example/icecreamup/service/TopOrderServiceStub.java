@@ -5,9 +5,8 @@ import org.springframework.stereotype.Component;
 import com.example.icecreamup.dto.ProductDTO;
 
 /* This is the Top Order Service Stub that implements  
- * the interface ITopOrderService and returns
- * the ProductDTO database for productId,
- * Order Count, and Flavor.
+ * the interface IAllOrderService and returns
+ * the list of all ProductDTO's available
  */
 @Component
 public class TopOrderServiceStub implements ITopOrderService
