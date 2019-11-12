@@ -1,4 +1,4 @@
-package com.example.icecreamup.services;
+package com.example.icecreamup.service;
 
 import com.example.icecreamup.dto.ProductDTO;
 
