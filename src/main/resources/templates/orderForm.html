@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ice Cream Up! - Submit Order</title>
+<style>
+html{
+	background-color: #ff7b00;
+	color: #fefefe;
+	border: 5px;
+	border-style:solid;
+	border-color: white;
+}
+
+.nav{
+
+  overflow: hidden;
+  background-color: white;
+  color: #ff7b00;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 10px;
+  style:block;
+  border-radius: 5px;
+}
+h2{
+	text-align:center;
+}
+a:visited{
+	color: #ff7b00;
+}
+a:hover{
+	color: black;
+}
+footer{
+	overflow: hidden;
+  background-color: white;
+  color: #ff7b00;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 10px;
+  style:block;
+  border-radius: 5px;
+	font-style: italic;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+	<a href="/start">Home</a>
+	<a href="/topOrders">Top Orders</a>
+	<a href="/orderForm">Submit Order</a>
+	<a href="/showOrders">View Orders</a>
+</div>
+<h1>Welcome to Ice Cream Up!</h1>
+<h2>Order Information</h2>
+
+<form action="#" th:action="@{/saveOrder}" th:object="${orderDTO}" method="GET">
+	<div>
+		<div> 
+			<span>Name: </span>
+		</div>
+		<input type="text" name="orderedBy" th:field="*{orderedBy}">
+	</div>
+	
+	<div>
+		<div> 
+			<span>Address: </span>
+		</div>
+		<input type="text" name="address" th:field="*{address}">
+	</div>
+	
+	<div>
+		<div> 
+			<span>Phone Number: </span>
+		</div>
+		<input type="tel" name="phoneNumber" th:field="*{phoneNumber}">
+	</div>
+	
+	<div>
+		<div> 
+			<span>Email: </span>
+		</div>
+		<input type="email" name="email" th:field="*{email}">
+	</div>
+	
+	<div>
+		<div> 
+			<span>Comments: </span>
+		</div>
+		<input type="text" name="comments" th:field="*{comments}">
+	</div>
+	
+	<input type="submit" value="Submit">
+</form>
+
+</body>
+<footer> IceCreamUp, Inc.</footer>
+
+</body>
+
+</html>
