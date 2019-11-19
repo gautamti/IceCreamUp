@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 17, 2019 at 08:24 PM
+-- Generation Time: Nov 19, 2019 at 07:33 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -32,6 +32,13 @@ DROP TABLE IF EXISTS `hibernate_sequence`;
 CREATE TABLE IF NOT EXISTS `hibernate_sequence` (
   `next_val` bigint(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `hibernate_sequence`
+--
+
+INSERT INTO `hibernate_sequence` (`next_val`) VALUES
+(3);
 
 -- --------------------------------------------------------
 
@@ -139,6 +146,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `CREATION_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `PRODUCT_NAME` varchar(255) NOT NULL,
   `CREATED_BY` varchar(255) NOT NULL DEFAULT 'anonymous',
+  `ORDER_COUNT` int(11) DEFAULT '0',
   PRIMARY KEY (`PRODUCT_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
