@@ -20,4 +20,16 @@ public class TopOrderServiceStub implements ITopOrderService
 		productDTO.setProductName("Chocolate");
 		return productDTO;
 	}
+
+	@Override
+	public Iterable<ProductDTO> fetchTopOrders() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void save(ProductDTO order) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 }

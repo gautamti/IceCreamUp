@@ -14,6 +14,7 @@ import com.example.icecreamup.dto.OrderDTO;
 import com.example.icecreamup.dto.ProductDTO;
 import com.example.icecreamup.service.IOrderService;
 import com.example.icecreamup.service.ITopOrderService;
+import com.example.icecreamup.service.TopOrderService;
 
 
 /**
@@ -37,13 +38,6 @@ public class IcecreamupController {
 	@RequestMapping(value="/start", method=RequestMethod.GET)
 	public String read() {
 		return "start";
-	}
-
-	@RequestMapping(value="/topOrders", method=RequestMethod.GET)
-	public String topOrder(Model model) {
-		ProductDTO productDTO = topOrderService.fetchByProductId(50);
-		model.addAttribute("productDTO", productDTO);
-		return "topOrders";
 	}
 	
 	@RequestMapping("/")
@@ -89,6 +83,24 @@ public class IcecreamupController {
 			// TODO: Return an error page or error message
 			e.printStackTrace();
 			log.error("Unable to view orders");
+		}
+		return modelAndView;
+	}
+	
+	@RequestMapping("/topOrders")
+	public ModelAndView topOrders()
+	{
+		ModelAndView modelAndView = new ModelAndView();
+		try
+		{
+			Iterable<ProductDTO> topOrders = topOrderService.fetchTopOrders();
+			modelAndView.setViewName("topOrders");
+			modelAndView.addObject("allOrders", topOrders);
+		} catch (Exception e)
+		{
+			// TODO: Return an error page or error message
+			e.printStackTrace();
+			log.error("Unable to view top orders");
 		}
 		return modelAndView;
 	}

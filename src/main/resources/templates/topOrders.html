@@ -61,6 +61,9 @@ footer{
 <h1>Welcome to Ice Cream Up!</h1>
 <h2>Top Ice Cream Flavors</h2>
 <p th:text="${productDTO}"/>
+<ul th:each="topOrder : ${topOrders}">
+	<li> <div th:text="${topOrder}"></div> </li>
+</ul>
 </body>
 <footer> IceCreamUp, Inc.</footer>
 </html>  

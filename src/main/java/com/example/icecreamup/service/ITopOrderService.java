@@ -12,5 +12,9 @@ public interface ITopOrderService {
 	 * @return a flavor with a matching id.
 	 */
 	ProductDTO fetchByProductId(int productId);
+
+	void save(ProductDTO order) throws Exception;
+
+	Iterable<ProductDTO> fetchTopOrders() throws Exception;
 }
 

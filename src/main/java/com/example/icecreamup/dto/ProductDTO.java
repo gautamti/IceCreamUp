@@ -3,20 +3,38 @@ package com.example.icecreamup.dto;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Class for Products.
  * Contains information about the product and a list of the ingredients (ProductItem)
  * @author chaklahk
  */
+
+@Entity
+@Table(name="products")
 public class ProductDTO 
 {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="PRODUCT_ID")
 	private int productId;
+	@Column(name="CONTAINER")
 	private String container;
+	@Column(name="ORDER_COUNT")
 	private int orderCount;
+	@Column(name="CREATION_DATE")
 	private Date creationDate;
+	@Column(name="CREATED_BY")
 	private String createdBy;
+	@Column(name="PRODUCT_NAME")
 	private String productName;
-	private List<ProductItemDTO> productItems;
+	
 	
 	public int getProductId()
 	{
@@ -83,14 +101,6 @@ public class ProductDTO
 		return productId + " " + orderCount + " " + productName;
 	}
 
-	public List<ProductItemDTO> getProductItems()
-	{
-		return productItems;
-	}
 
-	public void setProductItems(List<ProductItemDTO> productItems)
-	{
-		this.productItems = productItems;
-	}
 	
 }
