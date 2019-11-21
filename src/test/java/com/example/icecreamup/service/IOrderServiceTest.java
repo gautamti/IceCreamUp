@@ -20,7 +20,7 @@ public class IOrderServiceTest
 	
 	
 	@Test
-	public void testFetchOrder()
+	public void testFetchOrder() throws Exception
 	{
 		// Expected Value - Value to fetch
 		int orderId = 7;

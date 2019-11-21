@@ -19,4 +19,11 @@ public class OrderServiceStub implements IOrderService
 	{
 		
 	}
+
+	@Override
+	public Iterable<OrderDTO> fetchAllOrders() throws Exception
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
