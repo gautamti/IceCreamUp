@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.icecreamup.dto.ProductDTO;
 
-/* This is the Top Order Service Stub that implements  
+/** This is the Top Order Service Stub that implements  
  * the interface ITopOrderService and returns
  * the ProductDTO database for productId,
  * Order Count, and Flavor.
@@ -23,13 +23,11 @@ public class TopOrderServiceStub implements ITopOrderService
 
 	@Override
 	public Iterable<ProductDTO> fetchTopOrders() throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void save(ProductDTO order) throws Exception {
-		// TODO Auto-generated method stub
 		
 	}
 }
