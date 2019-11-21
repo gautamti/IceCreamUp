@@ -7,26 +7,28 @@ html{
 }
 
 .nav{
-
   overflow: hidden;
   background-color: white;
+  border-radius: 5px;
+}
+.nav a{
+  float: left;
   color: #ff7b00;
-  text-align: left;
+  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  margin: 10px;
-  style:block;
-  border-radius: 5px;
 }
 h2{
 	text-align:center;
 }
-a:visited{
-	color: #ff7b00;
+a.active{
+	background: #ff7b00;
+	color: white;
 }
 a:hover{
-	color: black;
+	background: #ff7b00;
+	color: white;
 }
 footer{
 	overflow: hidden;
