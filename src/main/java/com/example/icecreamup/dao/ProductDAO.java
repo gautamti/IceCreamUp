@@ -1,7 +1,10 @@
 package com.example.icecreamup.dao;
 
 import com.example.icecreamup.dto.ProductDTO;
-
+/**
+ * Connects Controller to ProductDTO
+ * Throws Exceptions useful for logging if save() or fetchAll()fail 
+ */
 public class ProductDAO implements IProductDAO {
 
 	ProductRepository productRepository;
