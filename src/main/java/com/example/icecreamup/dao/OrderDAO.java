@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.icecreamup.dto.OrderDTO;
-
 /**
- * 
+ * Connects Controller to OrderDTO
+ * Throws Exceptions useful for logging if save() or fetchAll()fail 
  * @author chaklahk
  */
 @Component
