@@ -59,14 +59,14 @@ public class IcecreamupController {
 		try
 		{
 			orderService.save(orderDTO);
+			return "start";
 		} catch (Exception e)
 		{
 			// TODO: Return an error page or error message
 			e.printStackTrace();
 			log.error("Unable to save order.", e);
+			return "start";
 		}
-		
-		return "start";
 	}
 	
 	@RequestMapping("/showOrders")
@@ -78,13 +78,14 @@ public class IcecreamupController {
 			Iterable<OrderDTO> allOrders = orderService.fetchAllOrders();
 			modelAndView.setViewName("showOrders");
 			modelAndView.addObject("allOrders", allOrders);
+			return modelAndView;
 		} catch (Exception e)
 		{
 			// TODO: Return an error page or error message
 			e.printStackTrace();
 			log.error("Unable to view orders");
+			return modelAndView;
 		}
-		return modelAndView;
 	}
 	
 	@RequestMapping("/topOrders")
@@ -96,12 +97,13 @@ public class IcecreamupController {
 			Iterable<ProductDTO> topOrders = topOrderService.fetchTopOrders();
 			modelAndView.setViewName("topOrders");
 			modelAndView.addObject("allOrders", topOrders);
+			return modelAndView;
 		} catch (Exception e)
 		{
 			// TODO: Return an error page or error message
 			e.printStackTrace();
 			log.error("Unable to view top orders");
+			return modelAndView;
 		}
-		return modelAndView;
 	}
 }
