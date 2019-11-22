@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -43,7 +44,7 @@ public class IcecreamupController {
 	@RequestMapping("/")
 	public String index() {
 		
-		return "start";
+		return "index";
 	}
 	
 	@RequestMapping("/orderForm")
@@ -52,7 +53,7 @@ public class IcecreamupController {
 		return "orderForm";
 	}
 	
-	@RequestMapping(value="/saveOrder")
+	@RequestMapping(value="/saveOrder", method=RequestMethod.POST)
 	public String saveOrder(OrderDTO orderDTO) {
 		orderDTO.setTimeStamp(new Date());
 		
@@ -66,10 +67,10 @@ public class IcecreamupController {
 			log.error("Unable to save order.", e);
 		}
 		
-		return "start";
+		return "saveOrder";
 	}
 	
-	@RequestMapping("/showOrders")
+	@RequestMapping("/showOrders", method=RequestMethod.GET)
 	public ModelAndView showOrders()
 	{
 		ModelAndView modelAndView = new ModelAndView();
@@ -87,7 +88,7 @@ public class IcecreamupController {
 		return modelAndView;
 	}
 	
-	@RequestMapping("/topOrders")
+	@RequestMapping("/topOrders", method=RequestMethod.GET)
 	public ModelAndView topOrders()
 	{
 		ModelAndView modelAndView = new ModelAndView();
