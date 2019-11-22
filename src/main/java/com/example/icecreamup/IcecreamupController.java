@@ -35,24 +35,24 @@ public class IcecreamupController {
 	
 	Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	@RequestMapping(value="/start", method=RequestMethod.GET)
-	public String read() {
-		return "start";
-	}
-	
 	@RequestMapping("/")
 	public String index() {
 		
 		return "start";
 	}
 	
-	@RequestMapping("/orderForm")
+	@RequestMapping(value="/start", method=RequestMethod.GET)
+	public String read() {
+		return "start";
+	}
+	
+	@RequestMapping(value="/orderForm", method=RequestMethod.GET)
 	public String orderForm(Model model) {
 		model.addAttribute("orderDTO", new OrderDTO());
 		return "orderForm";
 	}
 	
-	@RequestMapping(value="/saveOrder")
+	@RequestMapping(value="/saveOrder", method=RequestMethod.POST)
 	public String saveOrder(OrderDTO orderDTO) {
 		orderDTO.setTimeStamp(new Date());
 		
@@ -69,7 +69,7 @@ public class IcecreamupController {
 		return "start";
 	}
 	
-	@RequestMapping("/showOrders")
+	@RequestMapping(value="/showOrders", method=RequestMethod.GET)
 	public ModelAndView showOrders()
 	{
 		ModelAndView modelAndView = new ModelAndView();
@@ -82,12 +82,12 @@ public class IcecreamupController {
 		{
 			// TODO: Return an error page or error message
 			e.printStackTrace();
-			log.error("Unable to view orders");
+			log.error("Unable to view orders", e);
 		}
 		return modelAndView;
 	}
 	
-	@RequestMapping("/topOrders")
+	@RequestMapping(value="/topOrders", method=RequestMethod.GET)
 	public ModelAndView topOrders()
 	{
 		ModelAndView modelAndView = new ModelAndView();
@@ -100,7 +100,7 @@ public class IcecreamupController {
 		{
 			// TODO: Return an error page or error message
 			e.printStackTrace();
-			log.error("Unable to view top orders");
+			log.error("Unable to view top orders", e);
 		}
 		return modelAndView;
 	}

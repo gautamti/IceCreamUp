@@ -1,31 +1,35 @@
 package com.example.icecreamup.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import com.example.icecreamup.dao.IProductDAO;
 import com.example.icecreamup.dto.ProductDTO;
 
-public class TopOrderService implements ITopOrderService {
-
+@Primary
+@Component
+public class TopOrderService implements ITopOrderService
+{
 	@Autowired
 	IProductDAO productDAO;
 	
-	
 	@Override
-	public ProductDTO fetchByProductId(int productId) {
+	public ProductDTO fetchByProductId(int productId)
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void save(ProductDTO order) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public void save(ProductDTO order) throws Exception
+	{
+		productDAO.save(order);
 	}
 
 	@Override
-	public Iterable<ProductDTO> fetchTopOrders() throws Exception {
-		// TODO Auto-generated method stub
+	public Iterable<ProductDTO> fetchTopOrders() throws Exception
+	{
 		return productDAO.fetchAll();
 	}
 }
