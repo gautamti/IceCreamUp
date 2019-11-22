@@ -32,5 +32,4 @@ public class OrderSevice implements IOrderService
 	{
 		return orderDAO.fetchAll();
 	}
-
 }
