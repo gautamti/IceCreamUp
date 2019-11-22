@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `address` varchar(255) NOT NULL,
   `phone_number` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comments` varchar(512) DEFAULT NULL,
   PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
