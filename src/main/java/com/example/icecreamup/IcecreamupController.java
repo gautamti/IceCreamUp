@@ -82,7 +82,7 @@ public class IcecreamupController {
 		{
 			// TODO: Return an error page or error message
 			e.printStackTrace();
-			log.error("Unable to view orders");
+			log.error("Unable to view orders", e);
 		}
 		return modelAndView;
 	}
@@ -100,7 +100,7 @@ public class IcecreamupController {
 		{
 			// TODO: Return an error page or error message
 			e.printStackTrace();
-			log.error("Unable to view top orders");
+			log.error("Unable to view top orders", e);
 		}
 		return modelAndView;
 	}

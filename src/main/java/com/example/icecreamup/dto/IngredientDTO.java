@@ -51,4 +51,10 @@ public class IngredientDTO
 	{
 		this.price = price;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return ingredientId + " - " + ingredientName + " - " + price + " - " + isAvailable;
+	}
 }
