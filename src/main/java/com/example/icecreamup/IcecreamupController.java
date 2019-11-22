@@ -43,7 +43,7 @@ public class IcecreamupController {
 	@RequestMapping("/")
 	public String index() {
 		
-		return "start";
+		return "index";
 	}
 	
 	@RequestMapping("/orderForm")
@@ -66,7 +66,7 @@ public class IcecreamupController {
 			log.error("Unable to save order.", e);
 		}
 		
-		return "start";
+		return "saveOrder";
 	}
 	
 	@RequestMapping("/showOrders")
