@@ -15,7 +15,7 @@ public class OrderSevice implements IOrderService
 	IOrderDAO orderDAO;
 	
 	@Override
-	public OrderDTO fetchById(int orderId)
+	public OrderDTO setOrderId(int orderId)
 	{
 		// TODO Auto-generated method stub
 		return null;

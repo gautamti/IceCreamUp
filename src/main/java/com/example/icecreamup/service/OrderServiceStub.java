@@ -6,8 +6,9 @@ import com.example.icecreamup.dto.OrderDTO;
 @Component
 public class OrderServiceStub implements IOrderService
 {
+	
 	@Override
-	public OrderDTO fetchById(int orderId)
+	public OrderDTO setOrderId(int orderId)
 	{
 		OrderDTO order = new OrderDTO();
 		order.setOrderId(orderId);

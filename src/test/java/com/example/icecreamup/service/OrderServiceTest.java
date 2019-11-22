@@ -13,7 +13,10 @@ import com.example.icecreamup.service.IOrderService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class IOrderServiceTest
+//In java putting an I infront of a class name makes a developer think that the class is an interface.
+//This is not an interface thus there should be no I.
+//Furthermore you should be testing all of the DTOs, DAOs and services
+public class OrderServiceTest
 {
 	@Autowired
 	private IOrderService orderService;

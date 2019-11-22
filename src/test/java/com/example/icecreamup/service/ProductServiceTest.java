@@ -13,7 +13,7 @@ import com.example.icecreamup.dto.ProductDTO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class IProductServiceTest
+public class ProductServiceTest
 {
 	@Autowired
 	private IProductService productService;
