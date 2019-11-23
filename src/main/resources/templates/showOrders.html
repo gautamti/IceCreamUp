@@ -35,7 +35,7 @@ a:hover{
 	color: black;
 }
 footer{
-	overflow: hidden;
+  overflow: hidden;
   background-color: white;
   color: #ff7b00;
   text-align: center;
@@ -45,7 +45,7 @@ footer{
   margin: 10px;
   style:block;
   border-radius: 5px;
-	font-style: italic;
+  font-style: italic;
 }
 </style>
 </head>
@@ -60,6 +60,18 @@ footer{
 </div>
 <h1>Welcome to Ice Cream Up!</h1>
 <h2>Submitted Orders</h2>
+
+<table>
+<tr>
+<th>Order ID - </th>
+<th>Name - </th>
+<th>Address - </th>
+<th>Phone Number - </th>
+<th>Email Address - </th>
+<th>Date and Time Submitted - </th>
+<th>Comments</th>
+</tr>
+</table>
 
 <ul th:each="order : ${allOrders}">
 	<li> <div th:text="${order}"></div> </li>

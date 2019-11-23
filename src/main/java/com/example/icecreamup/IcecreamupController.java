@@ -16,13 +16,11 @@ import com.example.icecreamup.service.IOrderService;
 import com.example.icecreamup.service.ITopOrderService;
 import com.example.icecreamup.service.TopOrderService;
 
-
 /**
- * @author Administrator
- * handle the default
+ * Routes to each endpoint, including the base URL
+ * Catches exceptions when saving to the database has failed
  * @return
  */
-
 
 @Controller
 public class IcecreamupController {
@@ -40,7 +38,7 @@ public class IcecreamupController {
 		return "start";
 	}
 	
-	@RequestMapping("/")
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String index() {
 		
 		return "start";
@@ -56,6 +54,7 @@ public class IcecreamupController {
 	public String saveOrder(OrderDTO orderDTO) {
 		orderDTO.setTimeStamp(new Date());
 		
+		//Provides error handling for the save method
 		try
 		{
 			orderService.save(orderDTO);
