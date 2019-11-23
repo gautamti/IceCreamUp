@@ -7,10 +7,17 @@ import org.springframework.stereotype.Component;
 import com.example.icecreamup.dao.IOrderDAO;
 import com.example.icecreamup.dto.OrderDTO;
 
+/**
+ * Connects the business logic (DAO) layer
+ * to the service layer and implements the
+ * save and fetchAllOrders methods
+ */
+
 @Primary
 @Component
 public class OrderSevice implements IOrderService
 {
+
 	@Autowired
 	IOrderDAO orderDAO;
 	

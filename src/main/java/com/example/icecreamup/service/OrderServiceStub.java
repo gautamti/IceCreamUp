@@ -6,6 +6,13 @@ import com.example.icecreamup.dto.OrderDTO;
 @Component
 public class OrderServiceStub implements IOrderService
 {
+	/**
+	 * Get orders from persistence layer
+	 * Save orders to persistence layer
+	 * @param id a unique lookup
+	 * @return a product with a matching orderId
+	 */
+
 	@Override
 	public OrderDTO fetchById(int orderId)
 	{

@@ -7,6 +7,12 @@ import com.example.icecreamup.dto.ProductDTO;
 
 public class TopOrderService implements ITopOrderService {
 
+	/**
+	 * Connects the business logic (DAO) layer
+	 * to the service layer and implements the
+	 * fetchTopOrders method
+	 */
+	
 	@Autowired
 	IProductDAO productDAO;
 	
