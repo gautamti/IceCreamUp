@@ -48,18 +48,18 @@ INSERT INTO `hibernate_sequence` (`next_val`) VALUES
 
 DROP TABLE IF EXISTS `ingredients`;
 CREATE TABLE IF NOT EXISTS `ingredients` (
-  `INGREDIENT_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `INGREDIENT_NAME` varchar(255) NOT NULL,
-  `AVAILABLE` tinyint(1) NOT NULL,
-  `PRICE` double(10,2) NOT NULL,
-  PRIMARY KEY (`INGREDIENT_ID`)
+  `ingredient_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ingredient_name` varchar(255) NOT NULL,
+  `available` tinyint(1) NOT NULL,
+  `price` double(10,2) NOT NULL,
+  PRIMARY KEY (`ingredient_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `ingredients`
 --
 
-INSERT INTO `ingredients` (`INGREDIENT_ID`, `INGREDIENT_NAME`, `AVAILABLE`, `PRICE`) VALUES
+INSERT INTO `ingredients` (`ingredient_id`, `ingredient_name`, `available`, `price`) VALUES
 (4, 'Chocolate', 1, 2.50),
 (5, 'Vanilla', 1, 2.50),
 (6, 'Mint', 1, 2.75),
@@ -93,11 +93,11 @@ CREATE TABLE IF NOT EXISTS `orderdto` (
 
 DROP TABLE IF EXISTS `orderitems`;
 CREATE TABLE IF NOT EXISTS `orderitems` (
-  `ORDER_ID` int(11) NOT NULL,
-  `PRODUCT_ID` int(11) NOT NULL,
-  `QUANTITY` int(11) NOT NULL,
-  PRIMARY KEY (`ORDER_ID`,`PRODUCT_ID`),
-  KEY `FKEY_PRODUCT_ID` (`PRODUCT_ID`)
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`order_id`,`product_id`),
+  KEY `FKEY_PRODUCT_ID` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -108,14 +108,14 @@ CREATE TABLE IF NOT EXISTS `orderitems` (
 
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
-  `ORDER_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ORDER_BY` varchar(255) NOT NULL,
-  `ADDRESS` varchar(255) NOT NULL,
-  `PHONE_NUMBER` varchar(255) NOT NULL,
-  `EMAIL` varchar(255) NOT NULL,
-  `TIMESTAMP` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `COMMENTS` varchar(512) DEFAULT NULL,
-  PRIMARY KEY (`ORDER_ID`)
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_by` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone_number` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `comments` varchar(512) DEFAULT NULL,
+  PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -126,11 +126,11 @@ CREATE TABLE IF NOT EXISTS `orders` (
 
 DROP TABLE IF EXISTS `productitems`;
 CREATE TABLE IF NOT EXISTS `productitems` (
-  `PRODUCT_ID` int(11) NOT NULL,
-  `INGREDIENT_ID` int(11) NOT NULL,
-  `QUANTITY` int(11) NOT NULL,
-  PRIMARY KEY (`PRODUCT_ID`,`INGREDIENT_ID`),
-  KEY `FKEY_INGREDIENT_ID` (`INGREDIENT_ID`)
+  `product_id` int(11) NOT NULL,
+  `ingredient_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`ingredient_id`),
+  KEY `FKEY_INGREDIENT_ID` (`ingredient_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -141,13 +141,13 @@ CREATE TABLE IF NOT EXISTS `productitems` (
 
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
-  `PRODUCT_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `CONTAINER` varchar(255) NOT NULL DEFAULT 'Bowl',
-  `CREATION_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `PRODUCT_NAME` varchar(255) NOT NULL,
-  `CREATED_BY` varchar(255) NOT NULL DEFAULT 'anonymous',
-  `ORDER_COUNT` int(11) DEFAULT '0',
-  PRIMARY KEY (`PRODUCT_ID`)
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `container` varchar(255) NOT NULL DEFAULT 'Bowl',
+  `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `product_name` varchar(255) NOT NULL,
+  `created_by` varchar(255) NOT NULL DEFAULT 'anonymous',
+  `order_count` int(11) DEFAULT '0',
+  PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -158,15 +158,15 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Constraints for table `orderitems`
 --
 ALTER TABLE `orderitems`
-  ADD CONSTRAINT `FKEY_ORDER_ID` FOREIGN KEY (`ORDER_ID`) REFERENCES `orders` (`ORDER_ID`),
-  ADD CONSTRAINT `FKEY_PRODUCT_ID` FOREIGN KEY (`PRODUCT_ID`) REFERENCES `products` (`PRODUCT_ID`);
+  ADD CONSTRAINT `FKEY_ORDER_ID` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
+  ADD CONSTRAINT `FKEY_PRODUCT_ID` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
 --
 -- Constraints for table `productitems`
 --
 ALTER TABLE `productitems`
-  ADD CONSTRAINT `FKEY_INGREDIENT_ID` FOREIGN KEY (`INGREDIENT_ID`) REFERENCES `ingredients` (`INGREDIENT_ID`),
-  ADD CONSTRAINT `FKEY_PRODUCT_ID_PRODUCTITEMS` FOREIGN KEY (`PRODUCT_ID`) REFERENCES `products` (`PRODUCT_ID`);
+  ADD CONSTRAINT `FKEY_INGREDIENT_ID` FOREIGN KEY (`ingredient_id`) REFERENCES `ingredients` (`ingredient_id`),
+  ADD CONSTRAINT `FKEY_PRODUCT_ID_PRODUCTITEMS` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
