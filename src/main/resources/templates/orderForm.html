@@ -7,7 +7,7 @@
 html{
 	background-color: #ff7b00;
 	color: #fefefe;
-	border: 5px;
+	border: .2rem;
 	border-style:solid;
 	border-color: white;
 }
@@ -18,12 +18,15 @@ html{
   background-color: white;
   color: #ff7b00;
   text-align: left;
-  padding: 14px 16px;
+  padding: .8rem .9rem;
   text-decoration: none;
   font-size: 17px;
-  margin: 10px;
+  margin: .5rem;
   style:block;
-  border-radius: 5px;
+  border-radius: .2rem;
+}
+a{
+	padding: .25rem;
 }
 h2{
 	text-align:center;
@@ -39,13 +42,23 @@ footer{
   background-color: white;
   color: #ff7b00;
   text-align: center;
-  padding: 14px 16px;
+  padding: .8rem .9rem;
   text-decoration: none;
   font-size: 17px;
-  margin: 10px;
+  margin: .5rem;
   style:block;
-  border-radius: 5px;
+  border-radius: .2rem;
 	font-style: italic;
+}
+.input{
+	padding-bottom: .5rem;
+	margin-left: .5rem;
+}
+.textbox{
+	margin-left: .5rem;
+}
+.b{
+	margin: .5rem;
 }
 </style>
 </head>
@@ -63,41 +76,41 @@ footer{
 
 <form action="#" th:action="@{/saveOrder}" th:object="${orderDTO}" method="GET">
 	<div>
-		<div> 
+		<div class="input"> 
 			<span>Name: </span>
 		</div>
-		<input type="text" name="orderedBy" th:field="*{orderedBy}">
+		<input class="textbox" type="text" name="orderedBy" th:field="*{orderedBy}">
 	</div>
 	
 	<div>
-		<div> 
+		<div class="input"> 
 			<span>Address: </span>
 		</div>
-		<input type="text" name="address" th:field="*{address}">
+		<input class="textbox" type="text" name="address" th:field="*{address}">
 	</div>
 	
 	<div>
-		<div> 
+		<div class="input"> 
 			<span>Phone Number: </span>
 		</div>
-		<input type="tel" name="phoneNumber" th:field="*{phoneNumber}">
+		<input class="textbox" type="tel" name="phoneNumber" th:field="*{phoneNumber}">
 	</div>
 	
 	<div>
-		<div> 
+		<div class="input"> 
 			<span>Email: </span>
 		</div>
-		<input type="email" name="email" th:field="*{email}">
+		<input class="textbox" type="email" name="email" th:field="*{email}">
 	</div>
 	
 	<div>
-		<div> 
+		<div class="input"> 
 			<span>Comments: </span>
 		</div>
-		<input type="text" name="comments" th:field="*{comments}">
+		<input class="textbox" type="text" name="comments" th:field="*{comments}">
 	</div>
 	
-	<input type="submit" value="Submit">
+	<input class="b" type="submit" value="Submit">
 </form>
 
 </body>
